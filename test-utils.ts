@@ -9,7 +9,6 @@ export async function startVite(root: string, plugin: Plugin) {
 		plugins: [plugin],
 	});
 	await server.listen();
-	console.log(server.resolvedUrls);
 	return {
 		server,
 		url: server.resolvedUrls?.local[0] ?? "http://localhost:5173",
