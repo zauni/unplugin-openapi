@@ -1,0 +1,122 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Vite plugin > should handle a \`.yml\` file extension 1`] = `
+"export default {
+	openapi: "3.0.0",
+	info: {
+		title: "Test API",
+		version: "1.0.0"
+	},
+	paths: {
+		"/my/path": {
+			get: {
+				summary: "Some GET request",
+				responses: {
+					"200": {
+						description: "Some response",
+						content: {
+							"application/json": {
+								schema: {
+									type: "object",
+									properties: {
+										someKey: {
+											type: "string"
+										}
+									},
+									required: [
+										"someKey"
+									]
+								},
+								example: {
+									someKey: "some value"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};"
+`;
+
+exports[`Vite plugin > should handle a JSON schema with a reference 1`] = `
+"export default {
+	openapi: "3.0.0",
+	info: {
+		title: "My great API",
+		description: "Great description",
+		version: "1.0.0"
+	},
+	paths: {
+		"/my/path": {
+			get: {
+				summary: "Some GET request",
+				responses: {
+					"200": {
+						description: "Some response",
+						content: {
+							"application/json": {
+								schema: {
+									type: "object",
+									properties: {
+										someKey: {
+											type: "string"
+										}
+									},
+									required: [
+										"someKey"
+									]
+								},
+								example: {
+									someKey: "some value"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};"
+`;
+
+exports[`Vite plugin > should handle a YAML schema with a reference 1`] = `
+"export default {
+	openapi: "3.0.0",
+	info: {
+		title: "Test API",
+		version: "1.0.0"
+	},
+	paths: {
+		"/my/path": {
+			get: {
+				summary: "Some GET request",
+				responses: {
+					"200": {
+						description: "Some response",
+						content: {
+							"application/json": {
+								schema: {
+									type: "object",
+									properties: {
+										someKey: {
+											type: "string"
+										}
+									},
+									required: [
+										"someKey"
+									]
+								},
+								example: {
+									someKey: "some value"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};"
+`;

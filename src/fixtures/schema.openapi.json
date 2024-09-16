@@ -1,0 +1,11 @@
+{
+	"ApiObject": {
+		"type": "object",
+		"properties": {
+			"someKey": {
+				"type": "string"
+			}
+		},
+		"required": ["someKey"]
+	}
+}
