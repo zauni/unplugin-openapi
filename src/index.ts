@@ -1,5 +1,4 @@
-import Parser from "@readme/openapi-parser";
-
+import Parser from "@readme/json-schema-ref-parser";
 import {
 	type FilterPattern,
 	createFilter,

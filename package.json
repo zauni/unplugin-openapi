@@ -29,7 +29,7 @@
 		"check-exports": "attw --pack ."
 	},
 	"dependencies": {
-		"@readme/openapi-parser": "^2.6.0",
+		"@readme/json-schema-ref-parser": "^1.2.0",
 		"@rollup/pluginutils": "^5.1.0"
 	},
 	"devDependencies": {
