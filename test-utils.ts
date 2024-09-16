@@ -1,6 +1,6 @@
 import { copyFile, mkdir, readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { createServer, type Plugin } from "vite";
+import { type Plugin, createServer } from "vite";
 
 export async function startVite(root: string, plugin: Plugin) {
 	const server = await createServer({

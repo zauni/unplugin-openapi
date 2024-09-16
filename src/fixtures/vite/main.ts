@@ -1,7 +1,7 @@
 /// <reference lib="dom" />
 
-import api from "../api.yaml";
 import api2 from "../api.openapi.json";
+import api from "../api.yaml";
 
 const root = document.getElementById("root");
 

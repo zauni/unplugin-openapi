@@ -1,5 +1,5 @@
-import { expect, test } from "@playwright/test";
 import { rm, writeFile } from "node:fs/promises";
+import { expect, test } from "@playwright/test";
 import type { Plugin } from "vite";
 import { copyDirectory, startVite } from "../test-utils.js";
 import openapi from "./vite.js";
