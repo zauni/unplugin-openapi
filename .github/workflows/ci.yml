@@ -26,6 +26,8 @@ jobs:
         run: npm run test:browser:ci
       - name: Check build
         run: npm run build
+      - name: Check exports
+        run: npm run check-exports
       - name: Upload Playwright test results
         uses: actions/upload-artifact@v4
         if: always()

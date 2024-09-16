@@ -4,6 +4,9 @@
 	"description": "A bundler agnostic plugin which converts OpenAPI 3.0, 3.1 and Swagger files to ESM modules.",
 	"type": "module",
 	"files": ["dist", "types"],
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
@@ -17,6 +20,11 @@
 			"import": "./dist/vite.js"
 		}
 	},
+	"typesVersions": {
+		"*": {
+			"*": ["./dist/*", "./types/*", "./*"]
+		}
+	},
 	"scripts": {
 		"build": "tsup",
 		"lint": "biome check . && tsc --noEmit",
@@ -26,7 +34,7 @@
 		"test:ci": "vitest --run",
 		"test:browser": "playwright test --ui",
 		"test:browser:ci": "playwright test",
-		"check-exports": "attw --pack ."
+		"check-exports": "npm run build && attw --pack . --ignore-rules=cjs-resolves-to-esm"
 	},
 	"dependencies": {
 		"@readme/json-schema-ref-parser": "^1.2.0",
