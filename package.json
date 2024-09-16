@@ -23,7 +23,9 @@
 		"format": "biome format . --write",
 		"fix": "biome check . --write",
 		"test": "vitest --ui",
+		"test:ci": "vitest --run",
 		"test:browser": "playwright test --ui",
+		"test:browser:ci": "playwright test",
 		"check-exports": "attw --pack ."
 	},
 	"dependencies": {
