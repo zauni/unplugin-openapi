@@ -1,3 +1,4 @@
+import { patchFs } from "fs-monkey";
 import { vol } from "memfs";
 import type { Plugin } from "vite";
 import { beforeEach, describe, expect, it } from "vitest";
@@ -99,6 +100,8 @@ ApiObject:
 }
 `,
 	});
+
+	patchFs(vol);
 });
 
 describe("Vite plugin", () => {

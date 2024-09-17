@@ -110,6 +110,9 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (opts) => {
 				return ctx.modules;
 			},
 		},
+		esbuild: {
+			loader: "js",
+		},
 	};
 };
 
