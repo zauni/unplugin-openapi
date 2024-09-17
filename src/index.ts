@@ -113,6 +113,13 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (opts) => {
 		esbuild: {
 			loader: "js",
 		},
+		webpack(compiler) {
+			compiler.options.module.rules.push({
+				test: (value) =>
+					(options.extensions ?? []).some((ext) => value.includes(ext)),
+				type: "javascript/auto", // Treat JSON files as JavaScript modules
+			});
+		},
 	};
 };
 
