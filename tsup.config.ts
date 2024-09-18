@@ -3,6 +3,7 @@ import { defineConfig } from "tsup";
 export default defineConfig({
 	entry: [
 		"src/index.ts",
+		"src/astro.ts",
 		"src/esbuild.ts",
 		"src/rollup.ts",
 		"src/vite.ts",

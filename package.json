@@ -15,6 +15,10 @@
 		"./yaml": {
 			"types": "./types/yaml.d.ts"
 		},
+		"./astro": {
+			"require": "./dist/astro.cjs",
+			"import": "./dist/astro.js"
+		},
 		"./esbuild": {
 			"require": "./dist/esbuild.cjs",
 			"import": "./dist/esbuild.js"
@@ -59,6 +63,7 @@
 		"@tsconfig/node22": "^22.0.0",
 		"@types/node": "^22.5.4",
 		"@vitest/ui": "^2.1.0",
+		"astro": "^4.15.6",
 		"esbuild": "^0.23.1",
 		"fs-monkey": "^1.0.6",
 		"glob": "^11.0.0",
@@ -88,7 +93,8 @@
 		"rspack",
 		"esbuild",
 		"farm",
-		"plugin"
+		"plugin",
+		"astro"
 	],
 	"author": "Matthias Zaunseder",
 	"license": "MIT",
@@ -98,5 +104,8 @@
 	"homepage": "https://github.com/zauni/unplugin-openapi#readme",
 	"engines": {
 		"node": ">=18.0.0"
+	},
+	"publishConfig": {
+		"provenance": true
 	}
 }

@@ -121,6 +121,23 @@ build({
 
 <br></details>
 
+<details>
+<summary>Astro</summary><br>
+
+```ts
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
+import openapi from 'unplugin-openapi/astro'
+
+export default defineConfig({
+  integrations: [
+    openapi(),
+  ],
+})
+```
+
+<br></details>
+
 ### Use
 
 With an accompanying file `src/index.js`, the local `src/api.yaml` file would
