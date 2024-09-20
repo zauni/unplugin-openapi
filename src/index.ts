@@ -113,6 +113,17 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (opts) => {
 		esbuild: {
 			loader: "js",
 		},
+		rolldown: {
+			options(opts) {
+				const moduleTypes: Record<string, "js"> = Object.fromEntries(
+					(options.extensions ?? []).map((ext) => [ext, "js"]),
+				);
+				opts.moduleTypes = {
+					...opts.moduleTypes,
+					...moduleTypes,
+				};
+			},
+		},
 		webpack(compiler) {
 			compiler.options.module.rules.push({
 				test: (value) =>

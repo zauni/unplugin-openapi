@@ -60,6 +60,22 @@ export default {
 <br></details>
 
 <details>
+<summary>Rolldown</summary><br>
+
+```ts
+// rolldown.config.js
+import openapi from 'unplugin-openapi/rolldown'
+
+export default {
+  plugins: [
+    openapi(),
+  ],
+}
+```
+
+<br></details>
+
+<details>
 <summary>Webpack</summary><br>
 
 ```ts
