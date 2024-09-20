@@ -6,6 +6,7 @@ export default defineConfig({
 		"src/astro.ts",
 		"src/esbuild.ts",
 		"src/rollup.ts",
+		"src/rspack.ts",
 		"src/vite.ts",
 		"src/webpack.ts",
 	],

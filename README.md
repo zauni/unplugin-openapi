@@ -5,7 +5,7 @@ A bundler agnostic plugin which converts OpenAPI 3.0, 3.1 and Swagger files to E
 - **💡** Support for `$ref` references!
 - **🤖** `YAML` and `JSON` support!
 - **📋** OpenAPI version 3.0, 3.1 and 2.0 (Swagger)
-- **📦** Bundler agnostic! Works with [Vite](https://vitejs.dev/), [Rollup](https://rollupjs.org/), [Rolldown](https://rolldown.rs/), [esbuild](https://esbuild.github.io/), [Nuxt](https://nuxt.com/), [Rspack](https://rspack.dev/), [Astro](https://astro.build/), [Farm](https://www.farmfe.org/) and [Webpack](https://webpack.js.org/)!
+- **📦** Bundler agnostic! Works with [Vite](https://vitejs.dev/), [Rollup](https://rollupjs.org/), [Rolldown](https://rolldown.rs/), [esbuild](https://esbuild.github.io/), [Rspack](https://rspack.dev/), [Astro](https://astro.build/) and [Webpack](https://webpack.js.org/)!
 
 <p align="center">
   <a href="https://npmjs.com/package/unplugin-openapi"><img src="https://img.shields.io/npm/v/unplugin-openapi.svg" alt="npm package"></a>
@@ -75,18 +75,17 @@ module.exports = {
 <br></details>
 
 <details>
-<summary>Nuxt</summary><br>
+<summary>Rspack</summary><br>
 
 ```ts
-// nuxt.config.js
-export default defineNuxtConfig({
-  modules: [
-    ['unplugin-openapi/nuxt'],
-  ],
-})
+// rspack.config.js
+module.exports = {
+  /* ... */
+  plugins: [
+    require('unplugin-openapi/rspack')()
+  ]
+}
 ```
-
-> This module works for both Nuxt 2 and [Nuxt Vite](https://github.com/nuxt/vite)
 
 <br></details>
 

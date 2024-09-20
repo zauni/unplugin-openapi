@@ -120,6 +120,13 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (opts) => {
 				type: "javascript/auto", // Treat JSON files as JavaScript modules
 			});
 		},
+		rspack(compiler) {
+			compiler.options.module.rules.push({
+				test: (value) =>
+					(options.extensions ?? []).some((ext) => value.includes(ext)),
+				type: "javascript/auto", // Treat JSON files as JavaScript modules
+			});
+		},
 	};
 };
 

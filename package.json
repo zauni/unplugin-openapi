@@ -27,6 +27,10 @@
 			"require": "./dist/rollup.cjs",
 			"import": "./dist/rollup.js"
 		},
+		"./rspack": {
+			"require": "./dist/rspack.cjs",
+			"import": "./dist/rspack.js"
+		},
 		"./vite": {
 			"require": "./dist/vite.cjs",
 			"import": "./dist/vite.js"
@@ -60,6 +64,7 @@
 		"@arethetypeswrong/cli": "^0.16.2",
 		"@biomejs/biome": "^1.8.3",
 		"@playwright/test": "^1.47.0",
+		"@rspack/core": "^1.0.5",
 		"@tsconfig/node22": "^22.0.0",
 		"@types/node": "^22.5.4",
 		"@vitest/ui": "^2.1.0",
@@ -85,6 +90,7 @@
 	"keywords": [
 		"unplugin",
 		"rollup",
+		"rolldown",
 		"vite",
 		"openapi",
 		"swagger",
