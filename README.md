@@ -8,8 +8,8 @@ A bundler agnostic plugin which converts OpenAPI 3.0, 3.1 and Swagger files to E
 - **📦** Bundler agnostic! Works with [Vite](https://vitejs.dev/), [Rollup](https://rollupjs.org/), [Rolldown](https://rolldown.rs/), [esbuild](https://esbuild.github.io/), [Rspack](https://rspack.dev/), [Astro](https://astro.build/) and [Webpack](https://webpack.js.org/)!
 
 <p align="center">
-  <a href="https://npmjs.com/package/unplugin-openapi"><img src="https://img.shields.io/npm/v/unplugin-openapi.svg" alt="npm package"></a>
-  <a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/unplugin-openapi.svg" alt="node compatibility"></a>
+  <a href="https://npmjs.com/package/@zauni/unplugin-openapi"><img src="https://img.shields.io/npm/v/%40zauni%2Funplugin-openapi" alt="npm package"></a>
+  <a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/%40zauni%2Funplugin-openapi.svg" alt="node compatibility"></a>
   <a href="https://github.com/zauni/unplugin-openapi/actions/workflows/ci.yml"><img src="https://github.com/zauni/unplugin-openapi/actions/workflows/ci.yml/badge.svg?branch=main" alt="build status"></a>
   <a href="https://jsr.io/@zauni/unplugin-openapi"><img src="https://jsr.io/badges/@zauni/unplugin-openapi" alt="JSR"></a>
   <a href="https://jsr.io/@zauni/unplugin-openapi"><img src="https://jsr.io/badges/@zauni/unplugin-openapi/score" alt="JSR Score"></a>
@@ -20,7 +20,7 @@ A bundler agnostic plugin which converts OpenAPI 3.0, 3.1 and Swagger files to E
 Using npm:
 
 ```console
-npm install unplugin-openapi --save-dev
+npm install @zauni/unplugin-openapi --save-dev
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ npm install unplugin-openapi --save-dev
 
 ```ts
 // vite.config.ts
-import openapi from 'unplugin-openapi/vite'
+import openapi from '@zauni/unplugin-openapi/vite'
 
 export default defineConfig({
   plugins: [
@@ -48,7 +48,7 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
-import openapi from 'unplugin-openapi/rollup'
+import openapi from '@zauni/unplugin-openapi/rollup'
 
 export default {
   plugins: [
@@ -64,7 +64,7 @@ export default {
 
 ```ts
 // rolldown.config.js
-import openapi from 'unplugin-openapi/rolldown'
+import openapi from '@zauni/unplugin-openapi/rolldown'
 
 export default {
   plugins: [
@@ -83,7 +83,7 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-openapi/webpack')()
+    require('@zauni/unplugin-openapi/webpack')()
   ]
 }
 ```
@@ -98,7 +98,7 @@ module.exports = {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-openapi/rspack')()
+    require('@zauni/unplugin-openapi/rspack')()
   ]
 }
 ```
@@ -113,7 +113,7 @@ module.exports = {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-openapi/webpack')(),
+      require('@zauni/unplugin-openapi/webpack')(),
     ],
   },
 }
@@ -127,7 +127,7 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import openapi from 'unplugin-openapi/esbuild'
+import openapi from '@zauni/unplugin-openapi/esbuild'
 
 build({
   plugins: [openapi()],
@@ -142,7 +142,7 @@ build({
 ```ts
 // astro.config.mjs
 import { defineConfig } from 'astro/config';
-import openapi from 'unplugin-openapi/astro'
+import openapi from '@zauni/unplugin-openapi/astro'
 
 export default defineConfig({
   integrations: [
@@ -218,7 +218,7 @@ following contents:
 _src/yaml.d.ts_
 
 ```ts
-/// <reference types="unplugin-openapi/yaml" />
+/// <reference types="@zauni/unplugin-openapi/yaml" />
 ```
 
 _src/index.ts_
