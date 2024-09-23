@@ -28,7 +28,7 @@ test("file changes in referenced YAML files should cause a reload", async ({
 
 	await page.goto(url);
 
-	await expect(page.getByTestId("yaml-full")).toHaveText(`{
+	await expect(page.getByTestId("yaml")).toHaveText(`{
   "openapi": "3.0.0",
   "info": {
     "title": "My great API",
@@ -80,7 +80,7 @@ ApiObject:
 `,
 	);
 
-	await expect(page.getByTestId("yaml-full")).toHaveText(`{
+	await expect(page.getByTestId("yaml")).toHaveText(`{
   "openapi": "3.0.0",
   "info": {
     "title": "My great API",
@@ -126,13 +126,13 @@ test("file changes in referenced JSON files should cause a reload", async ({
 	page,
 }) => {
 	const { server, url } = await startVite(
-		`${folder}/vite`,
-		openapi({ extensions: [".yaml", ".yml", ".openapi.json"] }) as Plugin,
+		`${folder}/vite-json`,
+		openapi({ extensions: [".openapi.json"] }) as Plugin,
 	);
 
 	await page.goto(url);
 
-	await expect(page.getByTestId("json-full")).toHaveText(`{
+	await expect(page.getByTestId("json")).toHaveText(`{
   "openapi": "3.0.0",
   "info": {
     "title": "My great API",
@@ -186,7 +186,7 @@ test("file changes in referenced JSON files should cause a reload", async ({
 		}),
 	);
 
-	await expect(page.getByTestId("json-full")).toHaveText(`{
+	await expect(page.getByTestId("json")).toHaveText(`{
   "openapi": "3.0.0",
   "info": {
     "title": "My great API",
