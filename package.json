@@ -101,7 +101,6 @@
 		"webpack",
 		"rspack",
 		"esbuild",
-		"farm",
 		"plugin",
 		"astro"
 	],

@@ -2,5 +2,20 @@
 	"$schema": "https://jsr.io/schema/config-file.v1.json",
 	"name": "@zauni/unplugin-openapi",
 	"version": "1.0.0",
-	"exports": "./src/index.ts"
+	"exports": "./src/mod.ts",
+	"publish": {
+		"include": [
+			"README.md",
+			"types",
+			"src/astro.ts",
+			"src/esbuild.ts",
+			"src/index.ts",
+			"src/mod.ts",
+			"src/rolldown.ts",
+			"src/rollup.ts",
+			"src/rspack.ts",
+			"src/vite.ts",
+			"src/webpack.ts"
+		]
+	}
 }

@@ -218,7 +218,7 @@ following contents:
 _src/yaml.d.ts_
 
 ```ts
-/// <reference types="unplugin-openapi/types/yaml" />
+/// <reference types="unplugin-openapi/yaml" />
 ```
 
 _src/index.ts_

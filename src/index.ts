@@ -5,7 +5,7 @@ import {
 	dataToEsm,
 } from "@rollup/pluginutils";
 import type { OpenAPI, OpenAPIV2, OpenAPIV3, OpenAPIV3_1 } from "openapi-types";
-import type { UnpluginFactory } from "unplugin";
+import type { UnpluginFactory, UnpluginInstance } from "unplugin";
 import { createUnplugin } from "unplugin";
 
 export * from "openapi-types";
@@ -111,9 +111,11 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (opts) => {
 			},
 		},
 		esbuild: {
+			// handle .json files as JavaScript modules
 			loader: "js",
 		},
 		rolldown: {
+			// handle .json files as JavaScript modules
 			options(opts) {
 				const moduleTypes: Record<string, "js"> = Object.fromEntries(
 					(options.extensions ?? []).map((ext) => [ext, "js"]),
@@ -125,6 +127,7 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (opts) => {
 			},
 		},
 		webpack(compiler) {
+			// handle .json files as JavaScript modules
 			compiler.options.module.rules.push({
 				test: (value) =>
 					(options.extensions ?? []).some((ext) => value.includes(ext)),
@@ -132,6 +135,7 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (opts) => {
 			});
 		},
 		rspack(compiler) {
+			// handle .json files as JavaScript modules
 			compiler.options.module.rules.push({
 				test: (value) =>
 					(options.extensions ?? []).some((ext) => value.includes(ext)),
@@ -141,29 +145,39 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (opts) => {
 	};
 };
 
-export const unplugin = /* #__PURE__ */ createUnplugin(unpluginFactory);
+export const unplugin: UnpluginInstance<Options | undefined, boolean> =
+	/* #__PURE__ */ createUnplugin(unpluginFactory);
 
 export default unplugin;
 
-// Type guard for OpenAPI 3.0 and 3.1
+/**
+ * Type guard for OpenAPI 3.0 and 3.1
+ */
 export function isOpenAPIV3(
 	doc: OpenAPI.Document,
 ): doc is OpenAPIV3.Document | OpenAPIV3_1.Document {
 	return "openapi" in doc;
 }
 
-// Type guard for OpenAPI 2.0
+/**
+ * Type guard for OpenAPI 2.0
+ */
 export function isOpenAPIV2(doc: OpenAPI.Document): doc is OpenAPIV2.Document {
 	return "swagger" in doc;
 }
 
-// Utility functions to get the narrowed type
+/**
+ * Utility function to get the narrowed type of the OpenAPI 3.x document
+ */
 export function getOpenAPIV3(
 	doc: OpenAPI.Document,
 ): OpenAPIV3.Document | OpenAPIV3_1.Document | undefined {
 	return isOpenAPIV3(doc) ? doc : undefined;
 }
 
+/**
+ * Utility function to get the narrowed type of the OpenAPI 2.x document
+ */
 export function getOpenAPIV2(
 	doc: OpenAPI.Document,
 ): OpenAPIV2.Document | undefined {
