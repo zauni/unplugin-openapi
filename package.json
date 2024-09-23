@@ -1,6 +1,6 @@
 {
 	"name": "@zauni/unplugin-openapi",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A bundler agnostic plugin which converts OpenAPI 3.0, 3.1 and Swagger files to ESM modules.",
 	"type": "module",
 	"files": ["dist", "types"],
